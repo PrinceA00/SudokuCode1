@@ -20,8 +20,23 @@ public class SudokuBoard {
         }
     }
 
-    public String toString() {
-        // To be completed next
-        return "";
+   public String toString() {
+    StringBuilder result = new StringBuilder();
+
+    for (int row = 0; row < 9; row++) {
+        if (row % 3 == 0 && row != 0)
+            result.append("------+-------+------\n");
+
+        for (int col = 0; col < 9; col++) {
+            if (col % 3 == 0 && col != 0)
+                result.append("| ");
+
+            result.append(board[row][col] == '.' ? ". " : board[row][col] + " ");
+        }
+        result.append("\n");
     }
+
+    return result.toString();
+   }
+    
 }
